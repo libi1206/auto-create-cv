@@ -4,6 +4,7 @@ import com.github.jhonnymertz.wkhtmltopdf.wrapper.Pdf;
 import com.github.jhonnymertz.wkhtmltopdf.wrapper.params.Param;
 import com.libi.business.common.BaseResponse;
 import com.libi.business.common.BaseResponseFactory;
+import com.libi.business.model.vo.CvNameVo;
 import com.libi.servise.CvService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -29,7 +30,7 @@ public class CvServiceImpl implements CvService {
     private String URL_PATH;
 
     @Override
-    public BaseResponse<String> createPdf(String pdfUrl) throws IOException, InterruptedException {
+    public BaseResponse<CvNameVo> createPdf(String pdfUrl) throws IOException, InterruptedException {
         //创建pdf
         Pdf pdf = new Pdf();
         //生成pdf的文件名
@@ -48,6 +49,8 @@ public class CvServiceImpl implements CvService {
         // 生成pdf的位置
         String path = System.getProperty(FILE_PATH_KEY);
         pdf.saveAs(path+"/"+pdfName);
-        return BaseResponseFactory.getSuccessResponse("{\"fileName\":\""+pdfName+"\"}");
+        CvNameVo cvNameVo = new CvNameVo();
+        cvNameVo.setUuid(pdfName);
+        return BaseResponseFactory.getSuccessResponse(cvNameVo);
     }
 }

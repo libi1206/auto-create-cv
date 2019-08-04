@@ -19,15 +19,16 @@ import java.io.*;
 @Service
 public class DownloadServiceImpl implements DownloadService {
     @Value("${cv-file-path-key}")
-    private String FILE_PATH;
+    private String FILE_PATH_KEY;
     @Value("${cv-url-path}")
     private String URL_PATH;
 
     @Override
     public BaseResponse downloadCv(HttpServletResponse response, String uuid) throws IOException {
-        String fileName = FILE_PATH + uuid;
+        String fileName = System.getProperty(FILE_PATH_KEY)+"/"+uuid;
+
         //设置文件路径
-        File file = ResourceUtils.getFile(fileName);
+        File file = new File(fileName);
         //File file = new File(realPath , fileName);
         if (file.exists()) {
             // 设置强制下载不打开

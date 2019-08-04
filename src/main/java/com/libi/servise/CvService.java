@@ -1,6 +1,7 @@
 package com.libi.servise;
 
 import com.libi.business.common.BaseResponse;
+import com.libi.business.model.vo.CvNameVo;
 
 import java.io.IOException;
 
@@ -16,5 +17,5 @@ public interface CvService {
      * @param pdfUrl
      * @return
      */
-    BaseResponse<String> createPdf(String pdfUrl) throws IOException, InterruptedException;
+    BaseResponse<CvNameVo> createPdf(String pdfUrl) throws IOException, InterruptedException;
 }

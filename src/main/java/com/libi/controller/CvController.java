@@ -1,6 +1,7 @@
 package com.libi.controller;
 
 import com.libi.business.common.BaseResponse;
+import com.libi.business.model.vo.CvNameVo;
 import com.libi.servise.CvService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -34,7 +35,7 @@ public class CvController {
 
     @ApiOperation("获得简历PDF所在的wrl")
     @RequestMapping(value = "/getCv", method = RequestMethod.POST)
-    public BaseResponse getCv(@ApiParam("简历网址") @RequestBody String cvUrl) throws IOException, InterruptedException {
+    public BaseResponse<CvNameVo> getCv(@ApiParam("简历网址") @RequestBody String cvUrl) throws IOException, InterruptedException {
         return cvService.createPdf(cvUrl);
     }
 }
