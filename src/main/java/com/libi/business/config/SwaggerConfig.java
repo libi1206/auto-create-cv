@@ -16,7 +16,6 @@ import springfox.documentation.spring.web.plugins.Docket;
  */
 @Configuration
 public class SwaggerConfig {
-
     @Bean
     public Docket docket(ApiInfo apiInfo) {
 
@@ -26,8 +25,7 @@ public class SwaggerConfig {
                 //扫描的包
                 .apis(RequestHandlerSelectors.basePackage("com.libi.controller"))
                 .paths(PathSelectors.any())
-                .build()
-                ;
+                .build();
     }
 
     /**

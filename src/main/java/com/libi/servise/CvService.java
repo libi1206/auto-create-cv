@@ -2,6 +2,8 @@ package com.libi.servise;
 
 import com.libi.business.common.BaseResponse;
 
+import java.io.IOException;
+
 /**
  * @author :Libi
  * @version :1.0
@@ -14,5 +16,5 @@ public interface CvService {
      * @param pdfUrl
      * @return
      */
-    BaseResponse<String> createPdf(String pdfUrl);
+    BaseResponse<String> createPdf(String pdfUrl) throws IOException, InterruptedException;
 }

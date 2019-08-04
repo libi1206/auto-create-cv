@@ -13,6 +13,10 @@ public class BaseResponseFactory {
         return getResponse(Code.SUCCESS,data);
     }
 
+    public static BaseResponse getSuccessResponse() {
+        return getSuccessResponse(null);
+    }
+
     public static BaseResponse getResponse(Code code) {
         BaseResponse baseResponse = new BaseResponse(code);
         baseResponse.setData(null);
@@ -32,4 +36,5 @@ public class BaseResponseFactory {
         baseResponse.setMsg(msg);
         return baseResponse;
     }
+
 }

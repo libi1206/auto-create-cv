@@ -2,6 +2,8 @@ package com.libi.business.filter;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -13,7 +15,8 @@ import java.io.IOException;
  * @version :1.0
  * @date :2019-08-03 21:45
  */
-@WebFilter(urlPatterns = "/")
+@WebFilter(urlPatterns = {"/"},filterName = "defaultFilter")
+@Component
 public class ControllerFilter implements Filter {
     Logger logger = LoggerFactory.getLogger(ControllerFilter.class);
     @Override

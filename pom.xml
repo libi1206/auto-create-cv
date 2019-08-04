@@ -48,6 +48,14 @@
             <artifactId>lombok</artifactId>
             <version>1.18.8</version>
         </dependency>
+
+        <!--wk网页和dpf互转工具-->
+        <dependency>
+            <groupId>com.github.jhonnymertz</groupId>
+            <artifactId>java-wkhtmltopdf-wrapper</artifactId>
+            <version>1.1.11-RELEASE</version>
+        </dependency>
+
     </dependencies>
 
 

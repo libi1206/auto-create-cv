@@ -2,6 +2,7 @@ package com.libi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * @author :Libi
@@ -9,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date :2019-08-03 16:19
  */
 
+@EnableSwagger2
 @SpringBootApplication
 public class AutoCreateCvApplication {
 
