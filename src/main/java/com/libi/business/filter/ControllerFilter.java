@@ -28,7 +28,7 @@ public class ControllerFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         //记录当前时间
-        logger.info("开始访问：url:{}, method:{}",request.getRequestURI(),request.getMethod());
+        logger.info("===>开始访问：url:{}, method:{}",request.getRequestURI(),request.getMethod());
         long start = System.currentTimeMillis();
 
         //把这个请求交给下一个拦截器
@@ -36,7 +36,7 @@ public class ControllerFilter implements Filter {
 
         //记录执行完的时间
         long time = System.currentTimeMillis() - start;
-        logger.info("开始访问：url:{}, method:{}, time:{}ms",request.getRequestURI(),request.getMethod(),time);
+        logger.info("<===结束访问：url:{}, method:{}, time:{}ms",request.getRequestURI(),request.getMethod(),time);
     }
 
     @Override

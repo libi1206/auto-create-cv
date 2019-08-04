@@ -4,6 +4,7 @@ import com.libi.business.common.BaseResponse;
 import com.libi.business.common.BaseResponseFactory;
 import com.libi.servise.DownloadService;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ResourceUtils;
 
@@ -17,10 +18,10 @@ import java.io.*;
  */
 @Service
 public class DownloadServiceImpl implements DownloadService {
-    @Value("${cv-file-path}")
-    private static String FILE_PATH;
+    @Value("${cv-file-path-key}")
+    private String FILE_PATH;
     @Value("${cv-url-path}")
-    private static String URL_PATH;
+    private String URL_PATH;
 
     @Override
     public BaseResponse downloadCv(HttpServletResponse response, String uuid) throws IOException {

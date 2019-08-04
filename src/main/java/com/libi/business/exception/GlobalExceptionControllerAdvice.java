@@ -53,7 +53,7 @@ public class GlobalExceptionControllerAdvice {
     public BaseResponse handleUnknownException(Exception e) {
         logger.warn(e.getMessage());
         e.printStackTrace();
-        return BaseResponseFactory.getResponse(Code.UNKNOWN_ERROR, null);
+        return BaseResponseFactory.getResponse(Code.UNKNOWN_ERROR, e.getClass().getSimpleName() + ":" + e.getMessage());
     }
 
 }
