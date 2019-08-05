@@ -8,11 +8,8 @@ import com.libi.business.model.vo.CvNameVo;
 import com.libi.servise.CvService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
-import org.springframework.util.ResourceUtils;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.UUID;
 
